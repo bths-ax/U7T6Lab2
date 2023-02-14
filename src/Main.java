@@ -33,5 +33,12 @@ public class Main {
 		System.out.println(SortUtils.createRandomList(25));
 		System.out.println(SortUtils.createRandomListStr(25));
 		System.out.println(SortUtils.createRandomListStr(25));
+
+		Integer[] arr = SortUtils.createRandomArray(25);
+		for (int n : arr) System.out.print(n + " "); System.out.println();
+		SortStats stats = SortUtils.selectionSortArray(arr);
+		for (int n : arr) System.out.print(n + " "); System.out.println();
+		System.out.println("Took " + stats.getMemAccesses() + " accesses");
+		System.out.println("Took " + stats.getComparisons() + " comparisons");
 	}
 }

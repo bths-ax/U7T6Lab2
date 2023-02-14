@@ -57,4 +57,24 @@ public class SortUtils {
 			result.add(createRandomStr((int)(Math.random() * length + 1)));
 		return result;
 	}
+
+	/** Sorts an array of integers using selection sort and returns the sorting statistics */
+	public static SortStats selectionSortArray(Integer[] arr) {
+		int memAccesses = 0;
+		int comparisons = 0;
+		for (int i = 0; i < arr.length; i++) {
+			int k = i;
+			for (int j = i + 1; j < arr.length; j++) {
+				comparisons++;
+				if (arr[j] < arr[k]) {
+					k = j;
+				}
+			}
+			memAccesses++;
+			int tmp = arr[i];
+			arr[i] = arr[k];
+			arr[k] = tmp;
+		}
+		return new SortStats(memAccesses, comparisons);
+	}
 }
