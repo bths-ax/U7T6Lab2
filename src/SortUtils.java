@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /** Static methods for aiding in the creation of sorting algorithms */
 public class SortUtils {
@@ -19,7 +20,7 @@ public class SortUtils {
 	}
 
 	/** Creates a random array of Integers of a given length */
-	public static Integer[] createRandomArray(int length) {
+	public static Integer[] randomIntArr(int length) {
 		Integer[] result = new Integer[length];
 		for (int i = 0; i < length; i++)
 			result[i] = (int)(Math.random() * length * 2);
@@ -27,15 +28,12 @@ public class SortUtils {
 	}
 
 	/** Creates a random ArrayList of Integers of a given length */
-	public static ArrayList<Integer> createRandomList(int length) {
-		ArrayList<Integer> result = new ArrayList<Integer>();
-		for (int i = 0; i < length; i++)
-			result.add((int)(Math.random() * length * 2));
-		return result;
+	public static ArrayList<Integer> randomIntAL(int length) {
+		return new ArrayList<Integer>(Arrays.asList(randomIntArr(length)));
 	}
 
 	/** Creates a random String of a given length */
-	public static String createRandomStr(int length) {
+	public static String randomStr(int length) {
 		String result = "";
 		for (int i = 0; i < length; i++)
 			result += (char)(Math.random() * 26 + (int)('A'));
@@ -43,7 +41,7 @@ public class SortUtils {
 	}
 
 	/** Creates a random array of Strings of a given length */
-	public static String[] createRandomArrayStr(int length) {
+	public static String[] randomStrArr(int length) {
 		String[] result = new String[length];
 		for (int i = 0; i < length; i++)
 			result[i] = createRandomStr((int)(Math.random() * length + 1));
@@ -51,11 +49,8 @@ public class SortUtils {
 	}
 
 	/** Creates a random ArrayList of Strings of a given length */
-	public static ArrayList<String> createRandomListStr(int length) {
-		ArrayList<String> result = new ArrayList<String>();
-		for (int i = 0; i < length; i++)
-			result.add(createRandomStr((int)(Math.random() * length + 1)));
-		return result;
+	public static ArrayList<String> randomStrAL(int length) {
+		return new ArrayList<String>(Arrays.asList(randomStrArr(length)));
 	}
 
 	/** Sorts an array of integers using selection sort and returns the sorting statistics */
