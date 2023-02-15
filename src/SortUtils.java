@@ -44,7 +44,7 @@ public class SortUtils {
 	public static String[] randomStrArr(int length) {
 		String[] result = new String[length];
 		for (int i = 0; i < length; i++)
-			result[i] = createRandomStr((int)(Math.random() * length + 1));
+			result[i] = randomStr((int)(Math.random() * length + 1));
 		return result;
 	}
 

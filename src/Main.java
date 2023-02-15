@@ -29,12 +29,12 @@ public class Main {
 		System.out.println("isSortedStr(sal3) = "+SortUtils.isSortedStr(sal3));
 		System.out.println("isSortedStr(sal4) = "+SortUtils.isSortedStr(sal4));
 
-		System.out.println(SortUtils.createRandomList(25));
-		System.out.println(SortUtils.createRandomList(25));
-		System.out.println(SortUtils.createRandomListStr(25));
-		System.out.println(SortUtils.createRandomListStr(25));
+		System.out.println(SortUtils.randomIntAL(25));
+		System.out.println(SortUtils.randomIntAL(25));
+		System.out.println(SortUtils.randomStrAL(25));
+		System.out.println(SortUtils.randomStrAL(25));
 
-		Integer[] arr = SortUtils.createRandomArray(25);
+		Integer[] arr = SortUtils.randomIntArr(25);
 		for (int n : arr) System.out.print(n + " "); System.out.println();
 		SortStats stats = SortUtils.selectionSortArray(arr);
 		for (int n : arr) System.out.print(n + " "); System.out.println();
