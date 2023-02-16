@@ -34,11 +34,20 @@ public class Main {
 		System.out.println(SortUtils.randomStrAL(25));
 		System.out.println(SortUtils.randomStrAL(25));
 
+		System.out.println("Selection sort:");
 		Integer[] arr = SortUtils.randomIntArr(25);
 		for (int n : arr) System.out.print(n + " "); System.out.println();
-		SortStats stats = SortUtils.selectionSortArray(arr);
+		SortStats stats = SortUtils.selectionSort(arr);
 		for (int n : arr) System.out.print(n + " "); System.out.println();
 		System.out.println("Took " + stats.getMemAccesses() + " accesses");
 		System.out.println("Took " + stats.getComparisons() + " comparisons");
+
+		System.out.println("Insertion sort:");
+		Integer[] arr2 = SortUtils.randomIntArr(25);
+		for (int n : arr2) System.out.print(n + " "); System.out.println();
+		SortStats stats2 = SortUtils.insertionSort(arr2);
+		for (int n : arr2) System.out.print(n + " "); System.out.println();
+		System.out.println("Took " + stats2.getMemAccesses() + " accesses");
+		System.out.println("Took " + stats2.getComparisons() + " comparisons");
 	}
 }
