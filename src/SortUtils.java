@@ -55,31 +55,29 @@ public class SortUtils {
 
 	/** Sorts an array of integers using selection sort and returns the sorting statistics */
 	public static SortStats selectionSort(Integer[] arr) {
-		int memAccesses = 0;
-		int comparisons = 0;
+		SortStats stats = new SortStats();
 		for (int i = 0; i < arr.length; i++) {
 			// Find index of minimum element in the unsorted subarray
 			int k = i;
 			for (int j = i + 1; j < arr.length; j++) {
-				comparisons++;
+				stats.incrementComparisons();
 				if (arr[j] < arr[k]) {
 					k = j;
 				}
 			}
 			// Swap the minimum element with the current element to
 			// place it at the back of the sorted subarray
-			memAccesses++;
+			stats.incrementMemAccesses();
 			int tmp = arr[i];
 			arr[i] = arr[k];
 			arr[k] = tmp;
 		}
-		return new SortStats(memAccesses, comparisons);
+		return stats;
 	}
 
 	/** Sorts an array of integers using insertion sort and returns the sorting statistics */
 	public static SortStats insertionSort(Integer[] arr) {
-		int memAccesses = 0;
-		int comparisons = 0;
+		SortStats stats = new SortStats();
 		for (int i = 1; i < arr.length; i++) {
 			int j = i;
 			int n = arr[i];
@@ -87,14 +85,14 @@ public class SortUtils {
 			// originally at index `i` can be placed into
 			// the sorted portion of the array
 			while (j > 0 && arr[j - 1] > n) {
-				comparisons++;
-				memAccesses++;
+				stats.incrementComparisons();
+				stats.incrementMemAccesses();
 				arr[j] = arr[j - 1];
 				j--;
 			}
-			memAccesses++;
+			stats.incrementMemAccesses();
 			arr[j] = n;
 		}
-		return new SortStats(memAccesses, comparisons);
+		return stats;
 	}
 }
